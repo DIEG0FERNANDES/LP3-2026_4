@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Conta Bancária</title>
+  </head>
+  <body>
+    <h1>Simulação de Conta Bancária</h1>
+
+    <input type="number" id="valor" placeholder="Digite um valor" />
+    <br /><br />
+
+    <button onclick="depositar()">Depósito</button>
+    <button onclick="sacar()">Saque</button>
+    <button onclick="mostrar()">Mostrar Saldo</button>
+
+    <p id="resultado"></p>
+
+    <script src="conta.js"></script>
+    <script>
+      function depositar() {
+        const valor = parseFloat(document.getElementById("valor").value);
+        minhaConta.deposito(valor);
+        document.getElementById("resultado").innerText = "Depósito realizado!";
+      }
+
+      function sacar() {
+        const valor = parseFloat(document.getElementById("valor").value);
+        minhaConta.saque(valor);
+        document.getElementById("resultado").innerText = "Saque realizado!";
+      }
+
+      function mostrar() {
+        document.getElementById("resultado").innerText =
+          minhaConta.mostrarSaldo();
+      }
+    </script>
+  </body>
+</html>

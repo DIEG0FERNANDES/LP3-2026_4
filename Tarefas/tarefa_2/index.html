@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sistema de Cadastro de Veículos</title>
+  </head>
+  <body>
+    <h1>Cadastro de Veículos</h1>
+
+    <form id="formVeiculo">
+      <label>Marca:</label>
+      <input type="text" id="marca" required /><br /><br />
+
+      <label>Modelo:</label>
+      <input type="text" id="modelo" required /><br /><br />
+
+      <label>Tipo:</label>
+      <select id="tipo" required>
+        <option value="">Selecione</option>
+        <option value="Carro">Carro</option>
+        <option value="Moto">Moto</option></select
+      ><br /><br />
+
+      <div id="campoCarro" style="display: none">
+        <label>Número de portas:</label>
+        <input type="number" id="portas" /><br /><br />
+      </div>
+
+      <div id="campoMoto" style="display: none">
+        <label>Cilindradas:</label>
+        <input type="number" id="cilindradas" /><br /><br />
+      </div>
+
+      <button type="button" id="btnCadastrar">Cadastrar Veículo</button>
+      <button type="button" id="btnListar">Listar Veículos</button>
+      <button type="button" id="btnMover">Mover Veículos</button>
+    </form>
+
+    <h2>Resultado:</h2>
+    <div id="resultado"></div>
+
+    <!-- Importa o arquivo JS externo -->
+    <script src="index.js"></script>
+  </body>
+</html>
