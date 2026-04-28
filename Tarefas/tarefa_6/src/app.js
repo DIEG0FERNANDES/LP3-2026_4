@@ -1,14 +1,9 @@
 import express from "express";
-import userRoutes from "./routes/userRoutes.js";
+import userRoutes from "./routes/userRouter.js";
 
 const app = express();
 
-// Permite que o servidor entenda JSON
 app.use(express.json());
+app.use(userRoutes);
 
-// Permite que eu faça um teste genérico do servidor local
-app.get("/", (req, res) => {
-  res.send("Servidor Funcionando. ");
-});
-
-export { app };
+export default app;

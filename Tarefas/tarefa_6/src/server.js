@@ -1,10 +1,7 @@
-import express from "express";
 import app from "./app.js";
 
-const app = express();
+const PORT = 3000;
 
-app.use(express.json());
-
-server.listen(3000, () => {
-  console.log("Servidor rodando em http://localhost:3000");
+app.listen(PORT, () => {
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
