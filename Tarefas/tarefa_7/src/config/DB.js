@@ -7,3 +7,13 @@ export async function openDB() {
     driver: sqlite3.Database,
   });
 }
+
+export async function createTable() {
+  const db = await openDB();
+  await db.exec(`
+    CREATE TABLE IF NOT EXISTS usuarios(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    NOME TEXT NOT NULL
+    )
+  `);
+}
