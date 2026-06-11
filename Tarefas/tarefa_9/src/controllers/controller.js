@@ -1,3 +1,4 @@
+// src/controllers/produtoController.js
 import { Produto } from "../models/produto.js";
 
 // GET /produtos
@@ -5,7 +6,7 @@ export async function listarProdutos(req, res) {
   try {
     const produtos = await Produto.find();
     res.json(produtos);
-  } catch (error) {
+  } catch {
     res.status(500).json({ erro: "Erro ao listar produtos" });
   }
 }
@@ -17,7 +18,7 @@ export async function buscarProduto(req, res) {
     if (!produto)
       return res.status(404).json({ erro: "Produto não encontrado" });
     res.json(produto);
-  } catch (error) {
+  } catch {
     res.status(500).json({ erro: "Erro ao buscar produto" });
   }
 }
@@ -32,7 +33,7 @@ export async function criarProduto(req, res) {
     const novo = new Produto({ nome, preco, estoque });
     await novo.save();
     res.status(201).json(novo);
-  } catch (error) {
+  } catch {
     res.status(500).json({ erro: "Erro ao criar produto" });
   }
 }
@@ -49,7 +50,7 @@ export async function atualizarProduto(req, res) {
     if (!produto)
       return res.status(404).json({ erro: "Produto não encontrado" });
     res.json(produto);
-  } catch (error) {
+  } catch {
     res.status(500).json({ erro: "Erro ao atualizar produto" });
   }
 }
@@ -61,7 +62,7 @@ export async function deletarProduto(req, res) {
     if (!produto)
       return res.status(404).json({ erro: "Produto não encontrado" });
     res.json({ mensagem: "Produto removido" });
-  } catch (error) {
+  } catch {
     res.status(500).json({ erro: "Erro ao remover produto" });
   }
 }

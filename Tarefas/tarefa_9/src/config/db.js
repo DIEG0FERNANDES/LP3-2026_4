@@ -1,8 +1,9 @@
+// src/database.js
 import mongoose from "mongoose";
 
 export async function connectDB() {
   try {
-    await mongoose.connect("mongodb://localhost:27017/minhaLoja", {
+    await mongoose.connect("mongodb://localhost:27017/produtosDB", {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
